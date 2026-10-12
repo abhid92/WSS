@@ -1,8 +1,8 @@
 (() => {
   'use strict';
-  const themes=[['midnight-gold','Midnight & Gold','#0B1340','#C9A84C','#F0D98A','Formal, premium summit identity.'],['forest-champagne','Forest & Champagne','#103D30','#D3B479','#F3E5BB','Nature, wellbeing, and conscious enterprise.'],['burgundy-sandstone','Burgundy & Sandstone','#59283E','#D7AD75','#F3DFC2','Warm, ceremonial, and culturally rooted.'],['indigo-lavender','Indigo & Lavender','#30275F','#C7B6EB','#E7DEF7','Contemplative, contemporary, and atmospheric.'],['teal-copper','Teal & Copper','#124951','#E0AA82','#F5DDCA','Contemporary global forum with warm accents.']];
+  const themes=[['navy-gold-ivory','Navy Gold and Ivory','#081D33','#A9691E','#FAF7F0','Grand, event-led navy with ivory and champagne.'],['beige-gold','Beige and Gold','#392F25','#AD813F','#F5EEE1','Warm cream, sand and restrained antique gold.'],['corporate-premium','Corporate Premium','#172B3D','#B49B70','#FBFAF7','Recommended: light surfaces, navy and fine gold detailing.']];
   const config={
-    reviewEnabled:true,defaultTheme:'forest-champagne'
+    reviewEnabled:true,defaultTheme:'corporate-premium'
   }
   ;
   const valid=id=>themes.some(t=>t[0]===id);

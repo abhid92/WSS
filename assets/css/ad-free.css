@@ -1,0 +1,58 @@
+/* Advertising paused for design review; mounts remain available for later activation. */
+.ad-atf,.ad-skinner,.ad-aside,.mobile-ad-band,.ad-unit { display:none !important; }
+.site-shell { width:100%; max-width:none; }
+.ad-layout { display:block; }
+.theme-open { right:20px; }
+.ad-main .grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.ad-main .grid.two { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.ad-main .split,[data-page=index] .ad-main .split,.ad-main .experience-row { grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px; }
+.site-header nav { left:0; right:0; }
+.site-header { padding-inline:max(24px,calc((100vw - 1280px)/2)); }
+.editorial-hero { padding:60px max(32px,calc((100vw - 1280px)/2)) 90px; }
+.editorial-hero h1 { font-size:72px; font-weight:600; line-height:1.1; }
+.editorial-hero h1>span { font-size:44px; }
+.hero-content { width:54%; max-width:660px; }
+.hero-bottom { left:max(32px,calc((100vw - 1280px)/2)); right:32px; }
+.experience-explorer h2 { font-size:44px; }
+.experience-explorer { background:var(--brand-band); color:var(--brand-band-text); }
+.experience-explorer h2,.journey-copy h3 { color:var(--brand-band-text); }
+.journey-copy p:not(.eyebrow) { color:var(--brand-band-text); }
+.explorer-tabs button { color:var(--brand-band-text); }
+.explorer-tabs button[aria-selected=true],.experience-explorer .eyebrow { color:var(--brand-band-accent); }
+.stats { background:var(--brand-band); color:var(--brand-band-text); }
+.stats .stat strong { color:var(--brand-band-text); }
+.stats .stat span { color:var(--brand-band-text); }
+@media(max-width:1023px) {
+ .ad-main .grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:767px) {
+ .site-header { padding-inline:16px; }
+ .ad-main .grid,.ad-main .grid.two,.ad-main .split,[data-page=index] .ad-main .split,.ad-main .experience-row { grid-template-columns:minmax(0,1fr); gap:24px; }
+ .editorial-hero { padding:40px 24px 75px; min-height:620px; }
+ .editorial-hero h1 { font-size:44px; }
+ .editorial-hero h1>span { font-size:32px; }
+ .hero-content { width:100%; }
+ .hero-bottom { left:24px; right:16px; }
+ .experience-explorer h2 { font-size:32px; }
+}
+/* WSS identity leads the hero; the venue is supporting event information. */
+.summit-brand-hero { display:grid; grid-template-columns:1fr 1.05fr; gap:42px; align-items:center; min-height:600px; height:auto; padding-block:50px 65px; background:var(--color-bg); color:var(--color-primary); border-bottom:1px solid var(--color-border); }
+.summit-brand-hero .hero-content { width:100%; max-width:none; animation:none; }
+.summit-brand-hero h1 { font-size:clamp(44px,5vw,72px); color:var(--color-primary); text-shadow:none; line-height:1.1; }
+.summit-brand-hero h1>span { color:var(--accent-ink); font-size:clamp(32px,3.4vw,48px); }
+.summit-brand-hero .eyebrow { color:var(--accent-ink); }
+.summit-brand-hero .hero-mantra,.summit-brand-hero .hero-details strong,.summit-brand-hero .hero-details span { color:var(--color-primary); }
+.summit-brand-hero .hero-details span { font-size:15px; }
+.summit-brand-hero .button:not(.secondary) { background:var(--brand-button); color:var(--brand-button-text); }
+.summit-brand-hero .button.secondary { background:transparent; color:var(--color-primary); border-color:var(--color-accent); backdrop-filter:none; }
+.summit-identity { width:100%; margin:0; }
+.summit-identity img { display:block; width:100%; height:auto; object-fit:contain; }
+.summit-brand-hero .hero-bottom p { color:var(--accent-ink); }
+.summit-brand-hero .motion-control { display:none; }
+@media(max-width:767px) {
+ .summit-brand-hero { grid-template-columns:1fr; gap:24px; padding:30px 24px 60px; min-height:0; }
+ .summit-brand-hero h1 { font-size:44px; }
+ .summit-brand-hero h1>span { font-size:32px; }
+ .summit-identity { max-width:420px; margin-inline:auto; }
+ .summit-brand-hero .hero-bottom { bottom:18px; }
+}

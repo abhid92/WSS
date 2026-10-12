@@ -48,7 +48,14 @@ document.addEventListener('keydown',e=>{
   }
 }
 );
-matchMedia('(min-width:1051px)').addEventListener('change',e=>{
+matchMedia('(min-width:1024px)').addEventListener('change',e=>{
   if(e.matches)closeMenu()
 }
 );
+
+// Place the expanded drawer below navigation, including the ATF space above it.
+function updateAdNavigationOffset() {
+  navigation.style.setProperty('--ad-nav-top', Math.max(0, header.getBoundingClientRect().bottom) + 'px');
+}
+menu.addEventListener('click', updateAdNavigationOffset);
+addEventListener('resize', updateAdNavigationOffset, { passive: true });

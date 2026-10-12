@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//WSS//Summit 2026//EN
+BEGIN:VEVENT
+UID:wss-2026@worldspiritualitysummit.com
+DTSTAMP:20261012T000000Z
+DTSTART;VALUE=DATE:20261216
+DTEND;VALUE=DATE:20261218
+SUMMARY:World Spirituality Summit 2026
+LOCATION:Bharat Mandapam\, New Delhi
+DESCRIPTION:Shanti Manthan. Event dates only; session timings will be confirmed separately.
+END:VEVENT
+END:VCALENDAR

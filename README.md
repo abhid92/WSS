@@ -1,39 +1,34 @@
 # World Spirituality Summit 2026
 
-Ten standalone HTML pages. Pure CSS and vanilla JavaScript. No installation, build step, framework, or runtime dependency.
+A static, responsive event website for the World Spirituality Summit 2026, Shanti Manthan. It uses HTML, CSS, and vanilla JavaScript, with no build step.
 
 ## Local preview
 
-From this folder run `python3 -m http.server 8765 --bind 127.0.0.1` and open http://127.0.0.1:8765/.
+Run `python3 -m http.server 8765 --bind 127.0.0.1` from this directory and open `http://127.0.0.1:8765/`.
 
-## Theme approval
+## Active pages
 
-Use Review Color Themes on any page. Selection applies immediately and persists across pages. Copy Review Link includes the selected theme while preserving zone parameters and anchors. A localhost review link works only on the machine serving the preview; share the folder or host it on GitHub Pages for remote reviewers.
+- Home: `index.html`
+- About: `about.html`
+- Experience: `experience.html`
+- Venue: `venue.html`
+- Partners: `partners.html`
+- Register: `register.html`
 
-Themes: midnight-gold, forest-champagne, burgundy-sandstone, indigo-lavender, teal-copper.
+Schedule, Speakers, Tickets, and Media remain in the repository for later completion. They are hidden from navigation and redirect to the active site. `contact.html` remains as a compatibility redirect to registration.
 
-Set `reviewEnabled:false` and the approved `defaultTheme` in assets/js/theme.js after approval.
+## Forms and event information
 
-## GitHub Pages
+Attendee registration and partner enquiries use separate forms with different fields. These are preview forms: they validate in the browser but do not send or store submissions. Connect an approved form service before collecting real leads. Ticket information will be announced later; the attendee form is not a booking or ticket.
 
-Upload the contents of this folder to the desired GitHub repository root. Configure Pages to serve that branch at / (root). No build workflow is needed. Relative links support a project subdirectory. Repository: https://github.com/abhid92/WSS
+The venue page includes an embedded Google Map and route links. Google Maps and Google Fonts require an internet connection. A calendar file is available at `assets/wss-2026.ics`.
 
-GitHub Pages preview: https://abhid92.github.io/WSS/
+## Themes
 
-## Before launch
+Three shortlisted palettes can be previewed using the theme control. The selected theme persists between pages. Review `assets/js/theme.js` for the palette and default configuration.
 
-- Prices, convenience fee, availability counts and seating layout are demonstration values.
-- Booking creates a demonstration confirmation only. No payment is charged, ticket emailed, or admission reserved. Payment controls use sample data.
-- Enquiry forms do not send until their individual Formspree endpoints replace REPLACE_WITH_FORM_ID. Then AJAX handles success and errors.
-- Speaker and artist participation is tentative. Portraits use initials.
-- The venue hero is an artistic adaptation of the supplied image, not a verified photograph. The experience scenes are generated illustrations. The WSS text mark is used until an official logo is supplied.
-- Contact addresses, social destinations, legal policies, press kit and downloadable agenda need confirmation or supplied content.
-- Country selection includes a free-text Other option.
-- Add-ons apply per delegate; a corporate table contains ten delegates. Confirm this charging rule before launch.
-- Google Fonts and Google Maps require internet access.
-- Seven new visual assets and their complete generation prompts are listed in IMAGE-PROMPTS.md. The older cosmic image remains in assets but is no longer used in the design.
-- All event content follows the supplied brief. Logistics and participation have not been independently verified.
+## Publication
 
-## Reference-led visual update
+The site is a GitHub Pages-compatible static site. Relative paths support project subdirectories. Repository: https://github.com/abhid92/WSS
 
-Forest & Champagne is the default theme. Five palettes remain available for approval. Live headings are separate from the venue image. The transparent chakra rotates slowly; page elements reveal on scroll. Pause motion is available on every page and persists across navigation. System reduced-motion preferences disable these effects.
+Visuals are illustrative. Event logistics and participation details should be confirmed by the event team before publication.
