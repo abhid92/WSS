@@ -6,6 +6,11 @@
   }
   ;
   const valid=id=>themes.some(t=>t[0]===id);
+  const designs=['immersive','luminous','editorial'];
+  let savedDesign;
+  try{savedDesign=localStorage.getItem('wss-design')}catch(e){}
+  const requestedDesign=new URLSearchParams(location.search).get('design');
+  let currentDesign=designs.includes(requestedDesign)?requestedDesign:designs.includes(savedDesign)?savedDesign:designs.includes(document.documentElement.dataset.design)?document.documentElement.dataset.design:'immersive';
   let saved;
   try{
     saved=localStorage.getItem('wss-theme')
@@ -26,6 +31,23 @@
   persist();
   document.addEventListener('DOMContentLoaded',()=>{
     const dialog=document.getElementById('theme-dialog'), opener=document.getElementById('theme-open'),options=document.getElementById('theme-options'),status=document.getElementById('theme-status');
+    const designOptions=dialog.querySelector('.design-options');
+    const designButtons=[...dialog.querySelectorAll('[data-design]')];
+    function applyDesign(id,updateUrl=true){
+      if(!designs.includes(id))return;
+      currentDesign=id;
+      document.documentElement.dataset.design=id;
+      try{localStorage.setItem('wss-design',id)}catch(e){}
+      designButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.design===id)));
+      if(updateUrl){const url=new URL(location.href);url.searchParams.set('design',id);history.replaceState(null,'',url)}
+      status.textContent=`${id[0].toUpperCase()+id.slice(1)} layout selected.`;
+    }
+    if(designOptions){
+      let storedDesign;try{storedDesign=localStorage.getItem('wss-design')}catch(e){}
+      const requestedDesign=new URLSearchParams(location.search).get('design');
+      applyDesign(designs.includes(requestedDesign)?requestedDesign:designs.includes(storedDesign)?storedDesign:currentDesign,false);
+      designOptions.addEventListener('click',event=>{const button=event.target.closest('[data-design]');if(button)applyDesign(button.dataset.design)});
+    }
     if(!config.reviewEnabled){
       opener.hidden=true;
       return
@@ -40,22 +62,24 @@
       persist();
       const url=new URL(location.href);
       url.searchParams.set('theme',id);
+      url.searchParams.set('design',currentDesign);
       history.replaceState(null,'',url);
       render();
       status.textContent=themes.find(t=>t[0]===id)[1]+' selected.';
       options.querySelector(`[data-theme-id="${id}"]`).focus()
     }
     render();
-    opener.addEventListener('click',()=>dialog.showModal());
+    opener.addEventListener('click',()=>{dialog.scrollTop=0;dialog.showModal()});
     options.addEventListener('click',e=>{
       const b=e.target.closest('[data-theme-id]');
       if(b)apply(b.dataset.themeId)
     }
     );
-    document.getElementById('reset-theme').onclick=()=>apply(config.defaultTheme);
+    document.getElementById('reset-theme').onclick=()=>{apply(config.defaultTheme);applyDesign('immersive')};
     document.getElementById('copy-theme').onclick=async()=>{
       const url=new URL(location.href);
       url.searchParams.set('theme',current);
+      url.searchParams.set('design',currentDesign);
       try{
         await navigator.clipboard.writeText(url.href);
         status.textContent='Review link copied.'
@@ -71,6 +95,7 @@
       const url=new URL(a.href);
       if(url.origin===location.origin&&url.pathname.endsWith('.html')){
         url.searchParams.set('theme',current);
+        url.searchParams.set('design',currentDesign);
         a.href=url.href
       }
     }

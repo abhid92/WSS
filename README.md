@@ -27,6 +27,10 @@ The venue page includes an embedded Google Map and route links. Google Maps and 
 
 Three shortlisted palettes can be previewed using the theme control. The selected theme persists between pages. Review `assets/js/theme.js` for the palette and default configuration.
 
+## Content review workbook
+
+`content-review.xlsx` is a page-by-page snapshot of current page copy, metadata, navigation links, form fields, and image descriptions. Use the “Review notes / proposed copy” column on each page tab to mark edits. Workbook changes do not update the website automatically; approved copy must be applied to the matching HTML page.
+
 ## Publication
 
 The site is a GitHub Pages-compatible static site. Relative paths support project subdirectories. Repository: https://github.com/abhid92/WSS
