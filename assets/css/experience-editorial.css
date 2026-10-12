@@ -1,0 +1,71 @@
+/* A continuous, image-led programme for the nine WSS experiences. */
+.experience-page{color:var(--pd-ink);padding-bottom:0}
+.experience-opening{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,74px);align-items:center;padding-block:30px 42px}
+.experience-opening-copy{max-width:500px}
+.experience-opening-copy>.pd-label{margin-bottom:20px!important;color:var(--accent-ink)!important}
+.experience-opening h1{font-size:clamp(42px,4.2vw,58px);line-height:.98;letter-spacing:-.035em;margin:0 0 20px;max-width:none}
+.experience-opening-copy>p:last-child{font-size:18px!important;line-height:1.65!important;max-width:38ch;margin:0;color:var(--pd-muted)}
+.experience-opening-image{position:relative;min-width:0;margin:0;background:var(--pd-dark);overflow:hidden}
+.experience-opening-image img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain}
+.experience-opening-image figcaption{position:absolute;left:18px;bottom:16px;padding:7px 10px;background:#071629d9;color:var(--pd-light);font:500 10px/1.3 Inter,sans-serif;letter-spacing:.06em}
+.experience-opening-index{position:absolute;right:20px;top:18px;color:var(--pd-light);font:500 12px/1 Inter,sans-serif;letter-spacing:.12em}
+.experience-opening-index i{color:var(--pd-champagne);font-style:normal}
+.experience-index{position:sticky;top:88px;z-index:25;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:var(--color-bg);border-block:1px solid var(--pd-line)}
+.experience-index a{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:66px;padding:12px clamp(12px,2vw,26px);color:var(--pd-ink);text-decoration:none;font:500 15px/1.3 Inter,sans-serif;border-right:1px solid var(--pd-line);transition:color .2s,background-color .2s}
+.experience-index a:first-child{padding-left:0}
+.experience-index a:last-child{border-right:0}
+.experience-index a span{color:var(--accent-ink);font-size:10px;letter-spacing:.04em;white-space:nowrap}
+.experience-index a:hover,.experience-index a:focus-visible{color:var(--accent-ink)}
+.experience-index a:focus-visible{outline:2px solid var(--pd-gold);outline-offset:-3px}
+.experience-theme{padding:64px 0 20px;scroll-margin-top:170px}
+.experience-theme+.experience-theme{border-top:1px solid var(--pd-line)}
+.experience-theme-heading{display:grid;grid-template-columns:minmax(130px,.38fr) minmax(0,1fr);gap:24px;align-items:start;padding-bottom:25px;border-bottom:1px solid var(--pd-line)}
+.experience-theme-heading>.pd-label{color:var(--accent-ink)!important;display:flex;gap:12px;align-items:baseline;padding-top:9px}
+.experience-theme-heading>.pd-label span{font-size:9px;letter-spacing:.14em;opacity:.8}
+.experience-theme-heading h2{font-size:clamp(34px,4vw,48px);line-height:1.02;letter-spacing:-.025em;margin:0 0 10px}
+.experience-theme-heading div>p:last-child{font-size:16px!important;line-height:1.6!important;color:var(--pd-muted);max-width:58ch;margin:0}
+.experience-stories{display:grid;grid-template-columns:minmax(0,1fr)}
+.experience-story{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);align-items:center;gap:clamp(20px,3vw,42px);padding:30px 0;border-bottom:1px solid var(--pd-line);min-width:0}
+.experience-story:nth-child(even){grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr)}
+.experience-story:nth-child(even) figure{order:2}
+.experience-story figure{margin:0;min-width:0;background:var(--color-surface)}
+.experience-story img{display:block;width:100%;height:auto;object-fit:contain}
+.experience-story-copy{padding:12px 0;min-width:0}
+.experience-story-copy>.pd-label{font-size:10px!important;letter-spacing:.12em;color:var(--accent-ink)!important;margin:0 0 13px!important}
+.experience-story-copy h3{font:500 clamp(25px,2.3vw,34px)/1.08 'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em;color:var(--pd-ink);margin:0 0 12px}
+.experience-story-copy>p:last-child{font-size:14px!important;line-height:1.65!important;color:var(--pd-muted);margin:0;max-width:38ch}
+.experience-theme:last-child .experience-stories{grid-template-columns:minmax(0,1fr)}
+.experience-theme:last-child .experience-story{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);max-width:900px;border-bottom:0;padding-bottom:12px}
+.experience-theme:last-child .experience-story:nth-child(even) figure{order:0}
+@media(max-width:900px){
+ .experience-opening{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px}
+ .experience-opening h1{font-size:clamp(40px,4.6vw,54px)}
+ .experience-story,.experience-story:nth-child(even){grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)}
+ .experience-story:nth-child(even) figure{order:0}
+}
+@media(max-width:767px){
+ .experience-opening{grid-template-columns:1fr;gap:22px;padding-block:23px 28px}
+ .experience-opening-copy>.pd-label{margin-bottom:13px!important;max-width:35ch}
+ .experience-opening h1{font-size:42px;line-height:1.02;max-width:12ch;margin-bottom:13px}
+ .experience-opening-copy>p:last-child{font-size:15px!important;line-height:1.6!important}
+ .experience-opening-image img{aspect-ratio:3/2}
+ .experience-opening-image figcaption{left:10px;bottom:10px;font-size:9px}
+ .experience-opening-index{right:12px;top:12px;font-size:10px}
+ .experience-index{top:80px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible}
+ .experience-index a,.experience-index a:first-child{flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;min-width:0;min-height:67px;padding:8px 9px;font-size:11px;line-height:1.25}
+ .experience-index a span{font-size:8px}
+ .experience-theme{padding:42px 0 16px;scroll-margin-top:145px}
+ .experience-theme-heading{grid-template-columns:42px minmax(0,1fr);gap:14px;padding-bottom:18px}
+ .experience-theme-heading>.pd-label{display:block;padding-top:5px;font-size:9px!important}
+ .experience-theme-heading>.pd-label span{display:block;margin-top:5px;font-size:8px}
+ .experience-theme-heading h2{font-size:32px;line-height:1.05;margin-bottom:8px}
+ .experience-theme-heading div>p:last-child{font-size:14px!important;line-height:1.55!important}
+ .experience-story,.experience-story:nth-child(even),.experience-theme:last-child .experience-story{grid-template-columns:1fr;gap:14px;padding:20px 0}
+ .experience-story:nth-child(even) figure{order:0}
+ .experience-story img{height:auto}
+ .experience-story-copy{padding:0 2px}
+ .experience-story-copy>.pd-label{font-size:9px!important;margin-bottom:8px!important}
+ .experience-story-copy h3{font-size:29px;margin-bottom:7px}
+ .experience-story-copy>p:last-child{font-size:14px!important;line-height:1.6!important;max-width:48ch}
+}
+@media(prefers-reduced-motion:reduce){.experience-index a{transition:none}}

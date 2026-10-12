@@ -1,0 +1,91 @@
+/* Page-specific layout corrections based on the current desktop and mobile review. */
+
+/* About: balance the introduction copy with the summit image instead of stacking both full width. */
+.about-opening{padding-block:clamp(28px,4vw,54px) 30px;border-bottom:1px solid var(--pd-line)}
+.about-opening .pd-label{margin-bottom:12px!important}
+.about-opening h1{font-size:clamp(48px,5.1vw,72px);line-height:1.02;margin-bottom:12px}
+.about-opening .about-date{margin:0;font-size:clamp(16px,1.5vw,20px);color:var(--pd-muted)}
+.about-introduction{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,76px);align-items:center;padding-block:clamp(36px,5vw,62px)}
+.about-introduction>div{max-width:56ch}
+.about-introduction .pd-label{margin-bottom:14px!important}
+.about-introduction h2{font-size:clamp(38px,4vw,54px);line-height:1.05;margin-bottom:16px}
+.about-introduction .about-deck{font-size:20px;font-weight:500;color:var(--pd-ink);margin-bottom:12px}
+.about-introduction>div>p:last-child{color:var(--pd-muted);margin:0;max-width:54ch}
+.about-introduction>img{width:100%;height:clamp(300px,31vw,430px);object-fit:cover;object-position:center 44%;background:var(--color-surface)}
+.pd-about-principles{padding:32px clamp(24px,4vw,54px);gap:0;border-top:1px solid var(--pd-line);border-bottom:1px solid var(--pd-line);background:var(--color-surface)}
+.pd-about-principles article{padding:8px clamp(18px,3vw,40px)}
+.pd-about-principles article+article{border-left:1px solid var(--pd-line)}
+.pd-about-principles .pd-label{margin-bottom:12px!important}
+.pd-about-principles h3{font-size:clamp(23px,2.1vw,30px);margin-bottom:10px}
+.pd-about-principles p{font-size:15px;line-height:1.6;color:var(--pd-muted);margin:0}
+
+/* Experience: give the opening a real editorial split and let the complete copy lead. */
+.ux-experience-opening{min-height:clamp(360px,35vw,450px);margin-top:18px;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);background:var(--pd-dark)}
+.ux-experience-opening>div{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(28px,4vw,58px)}
+.ux-experience-opening .pd-label{color:var(--pd-champagne)!important;margin-bottom:16px!important}
+.ux-experience-opening h1{max-width:11ch;font-size:clamp(46px,5vw,68px);line-height:.98;margin:0 0 18px;color:var(--pd-light)}
+.ux-experience-opening p:not(.pd-label){max-width:38ch;font-size:17px;line-height:1.65;margin:0 0 22px;color:#f7f3ea}
+.ux-experience-opening .pd-button{margin-top:2px}
+.ux-experience-opening>img{display:block;width:100%;height:100%;min-height:inherit;align-self:stretch;object-fit:cover;object-position:center 45%;background:#10253a}
+.ux-experience-tabs{margin-top:22px}
+.ux-experience-guide{padding-top:30px}
+.ux-guide-heading{margin-bottom:22px}
+.ux-guide-heading h2{font-size:clamp(34px,3.5vw,46px)}
+.ux-experience-list{border-top:1px solid var(--pd-line)}
+.ux-experience-item,.ux-experience-item:nth-child(even){grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(28px,5vw,72px);padding:34px 0}
+.ux-experience-item:nth-child(even)>img{order:2}
+.ux-experience-item>img{width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;object-position:center;background:#fff}
+.ux-experience-item>div{max-width:58ch;padding:12px 0}
+.ux-experience-item h3{font-size:clamp(30px,3vw,42px);margin:0 0 12px}
+.ux-experience-item p{font-size:16px;line-height:1.7;color:var(--pd-muted)}
+
+/* Home: tighten the journey section and align its three stages as one compact module. */
+body[data-page="index"] .summit-journey{display:grid;text-align:left;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(34px,5vw,72px);align-items:start;padding-block:clamp(42px,5vw,58px)}
+body[data-page="index"] .journey-intro{position:static;align-self:start}
+body[data-page="index"] .journey-intro h2{max-width:none;margin-bottom:12px}
+body[data-page="index"] .journey-intro>p:last-child{max-width:35ch;margin:0;color:inherit;opacity:.86}
+body[data-page="index"] .journey-chapters{display:grid;grid-template-columns:1fr;min-width:0;margin-top:0}
+body[data-page="index"] .journey-chapter{display:grid;grid-template-columns:48px 1fr;gap:20px;padding:17px 0!important;border:0;border-bottom:1px solid var(--brand-band-accent)!important;opacity:1;transform:none}
+body[data-page="index"] .journey-chapter:last-child{border:0}
+body[data-page="index"] .journey-chapter>span{display:block;margin:0}
+body[data-page="index"] .journey-chapter:first-child{padding-top:0}
+body[data-page="index"] .journey-chapter h3{font-size:23px;line-height:1.15}
+body[data-page="index"] .journey-chapter p{margin-top:6px;line-height:1.55;opacity:.9}
+
+@media(max-width:767px){
+ .about-opening{padding-block:22px 20px}
+ .about-opening h1{font-size:42px}
+ .about-opening .about-date{font-size:14px;line-height:1.5}
+ .about-introduction{grid-template-columns:1fr;gap:22px;padding-block:28px}
+ .about-introduction h2{font-size:36px}
+ .about-introduction .about-deck{font-size:18px}
+ .about-introduction>div>p:last-child{font-size:15px;line-height:1.65}
+ .about-introduction>img{height:auto;aspect-ratio:4/3;object-fit:cover}
+ .pd-about-principles{grid-template-columns:1fr;padding:18px 22px;gap:0}
+ .pd-about-principles article{padding:20px 0}
+ .pd-about-principles article+article{border-left:0;border-top:1px solid var(--pd-line)}
+ .pd-about-principles h3{font-size:25px}
+ .ux-experience-opening{grid-template-columns:1fr;margin-top:12px;min-height:0}
+ .ux-experience-opening>div{padding:28px 24px 25px}
+ .ux-experience-opening h1{max-width:12ch;font-size:42px;line-height:1.02;margin-bottom:14px}
+ .ux-experience-opening p:not(.pd-label){font-size:15px;line-height:1.6;margin-bottom:18px}
+ .ux-experience-opening>img{height:auto;min-height:0;aspect-ratio:16/10;object-fit:cover;object-position:center 45%}
+ .ux-experience-tabs{margin-top:18px}
+ .ux-experience-guide{padding-top:24px}
+ .ux-guide-heading h2{font-size:32px}
+ .ux-experience-item,.ux-experience-item:nth-child(even){grid-template-columns:minmax(0,1fr);gap:0;padding:22px 0}
+ .ux-experience-item:nth-child(even)>img{order:0}
+ .ux-experience-item>img{aspect-ratio:4/3;object-fit:contain}
+ .ux-experience-item>div{padding:16px 2px 3px}
+ .ux-experience-item h3{font-size:29px;margin-bottom:8px}
+ .ux-experience-item p{font-size:15px;line-height:1.65}
+ body[data-page="index"] .summit-journey{display:block;text-align:left;padding:36px 22px}
+ body[data-page="index"] .journey-intro h2{max-width:none;font-size:32px}
+ body[data-page="index"] .journey-intro>p:last-child{font-size:15px;margin-top:10px}
+ body[data-page="index"] .journey-chapters{margin-top:21px}
+ body[data-page="index"] .journey-chapter{display:flex;gap:16px;padding:15px 0!important;border:0;border-bottom:1px solid var(--brand-band-accent)!important}
+ body[data-page="index"] .journey-chapter:last-child{border-bottom:0!important}
+ body[data-page="index"] .journey-chapter>span{display:block;flex:0 0 34px;margin:0;font-size:24px}
+ body[data-page="index"] .journey-chapter h3{font-size:20px}
+ body[data-page="index"] .journey-chapter p{font-size:14px;margin-top:5px}
+}
