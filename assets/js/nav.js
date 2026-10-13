@@ -16,14 +16,18 @@ navigation.querySelectorAll('a').forEach(a=>{
 );
 function closeMenu(){
   navigation.classList.remove('open');
+  document.body.classList.remove('menu-open');
   menu.setAttribute('aria-expanded','false');
   menu.setAttribute('aria-label','Open navigation');
+  menu.textContent='☰';
   document.body.style.overflow=''
 }
 menu.onclick=()=>{
   const open=navigation.classList.toggle('open');
+  document.body.classList.toggle('menu-open',open);
   menu.setAttribute('aria-expanded',String(open));
   menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');
+  menu.textContent=open?'×':'☰';
   document.body.style.overflow=open?'hidden':''
 }
 ;

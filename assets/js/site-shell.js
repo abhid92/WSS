@@ -6,7 +6,7 @@
     ['about', 'About', 'about.html'],
     ['experience', 'Experience', 'experience.html'],
     ['venue', 'Venue', 'venue.html'],
-    ['partners', 'Partners', 'partners.html']
+    ['partners', 'Partner with us', 'partners.html']
   ];
   const page = document.body.dataset.page || 'index';
   const current = pages.find(([id]) => id === page) || ['register', 'Register', 'register.html'];
@@ -61,7 +61,7 @@
           <nav aria-label="Footer navigation">
             <a href="./about.html">About WSS</a>
             <a href="./experience.html">Experiences</a>
-            <a href="./partners.html">Partnerships</a>
+            <a href="./partners.html">Partner with us</a>
             <a href="./venue.html">Plan your visit</a>
             <a hidden data-launch-hidden="true" href="./schedule.html">Schedule</a>
             <a hidden data-launch-hidden="true" href="./speakers.html">Speakers</a>

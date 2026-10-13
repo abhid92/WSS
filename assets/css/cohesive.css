@@ -193,3 +193,37 @@ html{scroll-padding-top:0}
  .theme-open,body[data-page=index] .theme-open{right:58px!important;left:auto!important;top:23px!important;bottom:auto!important;padding:6px 8px!important;font-size:10px!important}
 }
 @media(prefers-reduced-motion:reduce){.floating-whatsapp{transition:none}}
+
+/* Keep lead-page introductions proportional to their short copy on desktop. */
+@media(min-width:768px){
+ .lead-page{grid-template-columns:minmax(280px,.75fr) minmax(0,1.25fr);align-items:start;gap:clamp(24px,3.5vw,52px);padding-block:32px 56px}
+ .lead-page-intro{min-height:0;padding:clamp(28px,3vw,42px)}
+ .lead-page-intro h1{font-size:clamp(46px,4.2vw,62px)}
+ .lead-event-note{margin-top:28px;margin-bottom:0}
+}
+
+/* Mobile drawer must fill the viewport even after the document has scrolled. */
+@media(max-width:1023px){
+ .site-header nav.open{height:calc(100vh - 88px);height:calc(100dvh - 88px);max-height:none;min-height:0;box-sizing:border-box;overscroll-behavior:contain}
+ .menu-open .mobile-cta,.menu-open .floating-whatsapp,.menu-open .ux-up{visibility:hidden}
+}
+
+/* Keep shared mobile footer details in a compact, aligned grid. */
+@media(max-width:767px){
+ .pd-footer-top{grid-template-columns:118px minmax(0,1fr);gap:18px 18px;padding-block:24px 20px}
+ .pd-footer-top>div:first-child{grid-column:1;grid-row:1}
+ .pd-footer .pd-brand-original{width:118px;height:80px;padding:2px}
+ .pd-footer-top>div:nth-child(2){grid-column:2;grid-row:1;gap:5px;align-content:center}
+ .pd-footer-top>div:nth-child(2) .pd-label{font-size:9px!important;line-height:1.35!important;letter-spacing:.5px}
+ .pd-footer-top>div:nth-child(2) strong{font-size:13px;line-height:1.4}
+ .pd-footer-top>div:nth-child(2) p:not(.pd-label),.pd-footer-top>div:nth-child(2) a{font-size:12px;line-height:1.4;margin:0}
+ .pd-footer-top nav{grid-column:1/-1;grid-row:2;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px;padding-block:14px;border-top:1px solid #ffffff35}
+ .pd-footer-top nav a{font-size:13px!important}
+ .pd-footer-contact{grid-column:1/-1;grid-row:3;gap:8px;padding-top:13px}
+ .pd-footer-contact .pd-label{margin:0!important}
+ .pd-footer-contact a{font-size:12px!important}
+ .pd-footer-bottom{justify-content:flex-start;gap:5px 15px;padding-block:12px 82px!important;font-size:10px}
+ .pd-footer-bottom span:first-child{flex-basis:100%}
+ .floating-whatsapp{bottom:calc(18px + env(safe-area-inset-bottom))}
+ .ux-up{bottom:calc(18px + env(safe-area-inset-bottom))!important}
+}
