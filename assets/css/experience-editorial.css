@@ -46,7 +46,7 @@
 @media(max-width:767px){
  .experience-opening{grid-template-columns:1fr;gap:22px;padding-block:23px 28px}
  .experience-opening-copy>.pd-label{margin-bottom:13px!important;max-width:35ch}
- .experience-opening h1{font-size:42px;line-height:1.02;max-width:12ch;margin-bottom:13px}
+ .experience-opening h1{font-size:clamp(34px,9vw,38px);line-height:1.06;max-width:none;margin-bottom:13px}
  .experience-opening-copy>p:last-child{font-size:15px!important;line-height:1.6!important}
  .experience-opening-image img{aspect-ratio:3/2}
  .experience-opening-image figcaption{left:10px;bottom:10px;font-size:9px}
@@ -69,3 +69,53 @@
  .experience-story-copy>p:last-child{font-size:14px!important;line-height:1.6!important;max-width:48ch}
 }
 @media(prefers-reduced-motion:reduce){.experience-index a{transition:none}}
+
+/* Desktop: size the layout to the short copy and show multiple stories at once. */
+@media(min-width:768px){
+ .experience-opening{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:0;align-items:stretch;min-height:360px;margin-top:18px;padding:0;background:var(--pd-dark);color:var(--pd-light);overflow:hidden}
+ .experience-opening-copy{display:flex;flex-direction:column;justify-content:center;max-width:none;min-width:0;padding:clamp(30px,3.5vw,48px)}
+ .experience-opening-copy>.pd-label{margin-bottom:17px!important;color:var(--pd-champagne)!important}
+ .experience-opening h1{max-width:none;margin-bottom:18px;color:var(--pd-light);font-size:clamp(42px,4.4vw,60px);line-height:1.02}
+ .experience-opening-copy>p:last-child{max-width:37ch;color:#f5f0e7;font-size:17px!important;line-height:1.55!important}
+ .experience-opening-image{min-height:360px}
+ .experience-opening-image img{height:100%;min-height:360px;aspect-ratio:auto;object-fit:cover;object-position:center 48%}
+ .experience-opening-index{text-shadow:0 1px 6px #071629}
+ .experience-index{top:96px}
+ .experience-index a{min-height:58px;font-size:14px;font-weight:600}
+ .experience-index a span{font-weight:500}
+ .experience-theme{padding:40px 0 10px}
+ .experience-theme-heading{grid-template-columns:56px minmax(0,1fr);gap:18px;align-items:center;padding-bottom:17px}
+ .experience-theme-heading>.pd-label{flex-direction:column;gap:4px;margin:0!important;padding:0}
+ .experience-theme-heading>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.85fr);gap:32px;align-items:end}
+ .experience-theme-heading h2{margin:0;font-size:clamp(34px,3.4vw,44px)}
+ .experience-theme-heading div>p:last-child{max-width:45ch;font-size:15px!important;line-height:1.5!important}
+ .experience-stories{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px}
+ .experience-story,.experience-story:nth-child(even){grid-template-columns:minmax(0,.44fr) minmax(0,.56fr);gap:18px;padding:20px 0}
+ .experience-story:nth-child(even) figure{order:0}
+ .experience-story img{aspect-ratio:3/2;object-fit:contain}
+ .experience-story-copy{padding:0}
+ .experience-story-copy>.pd-label{margin-bottom:7px!important;font-size:9px!important}
+ .experience-story-copy h3{margin-bottom:8px;font-size:clamp(25px,2.25vw,32px)}
+ .experience-story-copy>p:last-child{max-width:36ch;font-size:14px!important;line-height:1.5!important}
+ .experience-theme:last-child .experience-story{max-width:none}
+}
+@media(min-width:768px) and (max-width:1079px){
+ .experience-opening,.experience-opening-image,.experience-opening-image img{min-height:340px}
+ .experience-opening-copy{padding:30px}
+ .experience-opening h1{font-size:clamp(39px,4.3vw,48px)}
+ .experience-index{top:88px}
+ .experience-theme-heading>div{grid-template-columns:minmax(0,1fr) minmax(200px,.85fr);gap:18px}
+ .experience-stories{grid-template-columns:1fr}
+ .experience-story,.experience-story:nth-child(even),.experience-theme:last-child .experience-story{grid-template-columns:minmax(0,.35fr) minmax(0,.65fr);gap:25px}
+}
+/* A single music feature belongs alongside its theme heading, without an empty feature row. */
+@media(min-width:1080px){
+ #culture{display:grid;grid-template-columns:minmax(0,.36fr) minmax(0,.64fr);gap:30px;align-items:center;padding:30px 0 34px;border-top:0}
+ #culture .experience-theme-heading{display:block;padding:0;border:0}
+ #culture .experience-theme-heading>.pd-label{margin-bottom:13px!important}
+ #culture .experience-theme-heading>div{display:block}
+ #culture .experience-theme-heading h2{margin-bottom:10px}
+ #culture .experience-stories{display:block}
+ #culture .experience-story{grid-template-columns:minmax(0,.52fr) minmax(0,.48fr);gap:20px;max-width:none;padding:0;border:0}
+ #culture .experience-story img{aspect-ratio:16/9}
+}
