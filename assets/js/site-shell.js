@@ -13,6 +13,7 @@
   const headerHost = document.querySelector('[data-site-header]');
   const footerHost = document.querySelector('[data-site-footer]');
   const overlaysHost = document.querySelector('[data-site-overlays]');
+  const whatsappIcon = '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2.5a13.5 13.5 0 0 0-11.7 20.2L2.5 29.5l7-1.8A13.5 13.5 0 1 0 16 2.5Zm0 24.5a11 11 0 0 1-5.6-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4A11 11 0 1 1 16 27Zm6-8.3c-.3-.1-1.9-.9-2.2-1s-.5-.1-.7.2-.8 1-1 1.2-.4.2-.7.1a9 9 0 0 1-2.7-1.7 10 10 0 0 1-1.8-2.2c-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.5-.4-.5-.7-.5h-.6c-.3 0-.6.1-.9.4s-1.2 1.2-1.2 2.9 1.2 3.3 1.4 3.5c.2.3 2.4 3.8 5.9 5.1 2.9 1.1 3.5.9 4.1.8.7-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5s-.3-.3-.6-.4Z"/></svg>';
 
   if (headerHost) {
     const brand = page === 'index'
@@ -57,7 +58,7 @@
           <div class="pd-footer-contact">
             <p class="pd-label">GET IN TOUCH</p>
             <a href="mailto:info@worldspiritualitysummit.com">info@worldspiritualitysummit.com</a>
-            <a href="https://wa.me/917982692805">WhatsApp: +91 7982692805</a>
+            <a class="pd-whatsapp-contact" href="https://wa.me/917982692805" aria-label="WhatsApp +91 7982692805">${whatsappIcon}<span>+91 7982692805</span></a>
           </div>
           <nav aria-label="Footer navigation">
             <a href="./about.html">About WSS</a>
@@ -72,12 +73,14 @@
         </div>
         <div class="pd-wrap pd-footer-bottom">
           <span>© 2026 Times Internet Limited</span>
-          <span>Visuals are illustrative · <a href="#page-top" class="ev-back-top">Back to top ↑</a></span>
+          <span>Visuals are illustrative</span>
           <span><button class="text-button" data-policy="Privacy Policy">Privacy</button> / <button class="text-button" data-policy="Terms">Terms</button></span>
         </div>
       </footer>
     `.trim();
   }
+
+  document.body.insertAdjacentHTML('beforeend', `<a class="floating-whatsapp" href="https://wa.me/917982692805" target="_blank" rel="noopener noreferrer" aria-label="Contact World Spirituality Summit on WhatsApp">${whatsappIcon}</a>`);
 
   if (overlaysHost) {
     overlaysHost.outerHTML = `
