@@ -16,9 +16,7 @@
   const whatsappIcon = '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2.5a13.5 13.5 0 0 0-11.7 20.2L2.5 29.5l7-1.8A13.5 13.5 0 1 0 16 2.5Zm0 24.5a11 11 0 0 1-5.6-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4A11 11 0 1 1 16 27Zm6-8.3c-.3-.1-1.9-.9-2.2-1s-.5-.1-.7.2-.8 1-1 1.2-.4.2-.7.1a9 9 0 0 1-2.7-1.7 10 10 0 0 1-1.8-2.2c-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.2-.5-.4-.5-.7-.5h-.6c-.3 0-.6.1-.9.4s-1.2 1.2-1.2 2.9 1.2 3.3 1.4 3.5c.2.3 2.4 3.8 5.9 5.1 2.9 1.1 3.5.9 4.1.8.7-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5s-.3-.3-.6-.4Z"/></svg>';
 
   if (headerHost) {
-    const brand = page === 'index'
-      ? '<a class="brand-lockup" href="./index.html" aria-label="World Spirituality Summit — Shanti Manthan"><span class="lockup-symbol"><img src="./assets/images/logo-final.png" alt="" width="1536" height="1024"></span><span class="lockup-wordmark"><img src="./assets/images/logo-final.png" alt="" width="1536" height="1024"></span></a>'
-      : '<a class="brand pd-brand-original" href="./index.html" aria-label="World Spirituality Summit — Shanti Manthan"><img src="./assets/images/logo-final.png" alt="World Spirituality Summit — Shanti Manthan" width="1536" height="1024"></a>';
+    const brand = '<a class="brand-lockup" href="./index.html" aria-label="World Spirituality Summit — Shanti Manthan"><span class="lockup-symbol"><img src="./assets/images/logo-final.png" alt="" width="1536" height="1024"></span><span class="lockup-wordmark"><img src="./assets/images/logo-final.png" alt="" width="1536" height="1024"></span></a>';
     const links = pages.map(([id, label, href]) =>
       `<a href="./${href}"${id === page ? ' aria-current="page"' : ''}>${label}</a>`
     ).join('');

@@ -1,11 +1,15 @@
 /* Page-specific layout corrections based on the current desktop and mobile review. */
 
 /* About: balance the introduction copy with the summit image instead of stacking both full width. */
-.about-opening{padding-block:clamp(28px,4vw,54px) 30px;border-bottom:1px solid var(--pd-line)}
+.about-opening{padding-block:clamp(16px,2vw,26px) 22px;border-bottom:1px solid var(--pd-line)}
 .about-opening .pd-label{margin-bottom:12px!important}
-.about-opening h1{font-size:clamp(48px,5.1vw,72px);line-height:1.02;margin-bottom:12px}
-.about-opening .about-date{margin:0;font-size:clamp(16px,1.5vw,20px);color:var(--pd-muted)}
-.about-introduction{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,76px);align-items:center;padding-block:clamp(36px,5vw,62px)}
+.about-opening h1{font-size:clamp(48px,5.1vw,72px);line-height:1.02;margin-bottom:18px}
+.about-opening .about-date{display:flex;align-items:center;flex-wrap:wrap;gap:8px 22px;width:fit-content;max-width:100%;margin:0;padding:13px 0 13px 17px;border-left:3px solid var(--pd-gold);color:var(--pd-ink);font:400 15px/1.4 Inter,Arial,sans-serif;text-decoration:none}
+.about-date strong{color:var(--accent-ink);font-size:19px;white-space:nowrap}
+.about-date>span:nth-child(2){color:var(--pd-muted)}
+.about-date-action{font-weight:600;border-bottom:1px solid var(--pd-gold);white-space:nowrap}
+.about-date:hover .about-date-action,.about-date:focus-visible .about-date-action{border-bottom-color:currentColor}
+.about-introduction{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,76px);align-items:center;padding-block:clamp(30px,4vw,50px)}
 .about-introduction>div{max-width:56ch}
 .about-introduction .pd-label{margin-bottom:14px!important}
 .about-introduction h2{font-size:clamp(38px,4vw,54px);line-height:1.05;margin-bottom:16px}
@@ -18,6 +22,11 @@
 .pd-about-principles .pd-label{margin-bottom:12px!important}
 .pd-about-principles h3{font-size:clamp(23px,2.1vw,30px);margin-bottom:10px}
 .pd-about-principles p{font-size:15px;line-height:1.6;color:var(--pd-muted);margin:0}
+.ev-curator aside>.about-curator-visit{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:fit-content;max-width:100%;padding:13px 16px;border-left:2px solid var(--pd-champagne);background:#faf7f00d;color:var(--pd-light);font:400 14px/1.4 Inter,Arial,sans-serif;text-decoration:none}
+.about-curator-date{font-weight:700;font-size:20px;color:var(--pd-champagne)}
+.about-curator-action{margin-top:7px;border-bottom:1px solid var(--pd-champagne);font-weight:600;color:var(--pd-light)}
+.about-curator-visit:hover .about-curator-action,.about-curator-visit:focus-visible .about-curator-action{border-bottom-color:currentColor}
+.about-curator-visit:focus-visible,.about-date:focus-visible{outline:2px solid var(--pd-gold);outline-offset:4px}
 
 /* Experience: give the opening a real editorial split and let the complete copy lead. */
 .ux-experience-opening{min-height:clamp(360px,35vw,450px);margin-top:18px;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);background:var(--pd-dark)}
@@ -85,9 +94,14 @@ body[data-page="index"] .journey-chapter p{
 }
 
 @media(max-width:767px){
- .about-opening{padding-block:22px 20px}
+ .about-opening{padding-block:18px 20px}
  .about-opening h1{font-size:42px}
- .about-opening .about-date{font-size:14px;line-height:1.5}
+ .about-opening .about-date{gap:3px 12px;padding:9px 0 9px 13px;font-size:14px;line-height:1.5}
+ .about-date strong{font-size:17px}
+ .about-date-action{width:fit-content}
+ .ev-curator aside>.about-curator-visit{grid-column:1/-1;grid-row:3;width:100%;padding:10px 12px}
+ .about-curator-date{font-size:17px}
+ .about-curator-action{font-size:12px}
  .about-introduction{grid-template-columns:1fr;gap:22px;padding-block:28px}
  .about-introduction h2{font-size:36px}
  .about-introduction .about-deck{font-size:18px}
