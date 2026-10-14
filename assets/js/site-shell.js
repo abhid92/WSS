@@ -8,6 +8,18 @@
     ['venue', 'Venue', 'venue.html'],
     ['partners', 'Partner with us', 'partners.html']
   ];
+  const footerBrands = [
+    ['The Times of India', 'https://timesofindia.indiatimes.com/', 'toi-icon.png'],
+    ['Navbharat Times', 'https://navbharattimes.indiatimes.com/', 'nbt-icon.png'],
+    ['Vijay Karnataka', 'https://vijaykarnataka.com/', 'vijay-karnataka-icon.png'],
+    ['Maharashtra Times', 'https://maharashtratimes.com/', 'maharashtra-times-icon.png'],
+    ['Samayam Tamil', 'http://tamil.samayam.com/', 'samayam-tamil-icon.png'],
+    ['Samayam Telugu', 'https://telugu.samayam.com/', 'samayam-telugu-icon.png'],
+    ['Samayam Malayalam', 'https://malayalam.samayam.com/', 'samayam-malayalam-icon.png'],
+    ['I Am Gujarat', 'https://www.iamgujarat.com/', 'iam-gujarat-icon.png'],
+    ['Bhagavat', 'https://www.bhagavat.co.in/', 'bhagavat-icon.png'],
+    ['Speaking Tree', 'https://timesofindia.indiatimes.com/speaking-tree', 'speaking-tree-logo.png']
+  ];
   const page = document.body.dataset.page || 'index';
   const current = pages.find(([id]) => id === page) || ['register', 'Register', 'register.html'];
   const headerHost = document.querySelector('[data-site-header]');
@@ -68,6 +80,16 @@
             <a hidden data-launch-hidden="true" href="./tickets.html">Tickets</a>
             <a hidden data-launch-hidden="true" href="./media.html">Media</a>
           </nav>
+        </div>
+        <div class="pd-wrap pd-footer-presenter">
+          <p class="pd-label">PRESENTED BY</p>
+          <a href="https://timesinternet.in/" target="_blank" rel="noopener noreferrer" aria-label="Times Internet (opens in a new tab)"><img src="./assets/images/footer-brands/times-internet-logo.png" alt="Times Internet" width="4647" height="1341" loading="lazy"></a>
+        </div>
+        <div class="pd-wrap pd-footer-brands">
+          <p class="pd-label">OUR BRANDS</p>
+          <div class="pd-footer-brand-grid">
+            ${footerBrands.map(([name, href, image]) => `<a href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${name} (opens in a new tab)"><img src="./assets/images/footer-brands/${image}" alt="" loading="lazy"><span>${name}</span></a>`).join('')}
+          </div>
         </div>
         <div class="pd-wrap pd-footer-bottom">
           <span>© 2026 Times Internet Limited</span>
