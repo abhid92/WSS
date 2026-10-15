@@ -57,11 +57,11 @@
         <div class="pd-wrap pd-footer-top">
           <div>
             <a class="brand pd-brand-original" href="./index.html" aria-label="World Spirituality Summit — Shanti Manthan"><img src="./assets/images/logo-final.png" alt="World Spirituality Summit — Shanti Manthan" width="1536" height="1024"></a>
-            <p>Spiritual wisdom.<br>Collective peace.</p>
+            <p>People. Purpose. Planet.</p>
           </div>
           <div>
             <p class="pd-label">WORLD SPIRITUALITY SUMMIT 2026</p>
-            <strong>16 &amp; 17 December 2026</strong>
+            <strong>16–17 December 2026</strong>
             <p>Bharat Mandapam, New Delhi</p>
             <a href="./register.html">Register ↗</a>
           </div>
